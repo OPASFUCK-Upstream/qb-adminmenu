@@ -209,6 +209,8 @@ RegisterNetEvent('qb-admin:server:SaveCar', function(mods, vehicle, hash, plate)
             plate,
             0
         })
+        print('here')
+        TriggerClientEvent('rv-vehkeys:client:AddVehicleKey', src, plate, vehicle.model)
         TriggerClientEvent('QBCore:Notify', src, Lang:t("success.success_vehicle_owner"), 'success', 5000)
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.failed_vehicle_owner"), 'error', 3000)
